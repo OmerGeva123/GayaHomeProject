@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Data/">
+    <File Path="AppDbContext.cs" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path="Operation.cs" />
+  </Folder>
+  <Project Path="Calculator.csproj" />
+</Solution>

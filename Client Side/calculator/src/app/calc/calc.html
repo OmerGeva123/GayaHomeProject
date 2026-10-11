@@ -1,0 +1,40 @@
+<form (ngSubmit)="onSubmit()">
+  <label for="first-number">First number</label>
+  <input id="first-number" name="firstNumber" [(ngModel)]="number1" type="number" step="any" required>
+
+  
+
+<mat-form-field>
+  <mat-label>Operation</mat-label>
+
+  <mat-select [(value)]="selectedOption">
+    @for (option of options; track option) {
+      <mat-option [value]="option.op">
+        {{ option.symbol }}
+      </mat-option>
+    }
+  </mat-select>
+</mat-form-field>
+<label for="second-number">Second number</label>
+  <input id="second-number" name="secondNumber" [(ngModel)]="number2" type="number" step="any" required>
+  <button type="submit" [disabled]="selectedOption == '' || (selectedOption == 'Divide' && number2 == 0)">Calculate</button>
+</form>
+<h4>{{ result() }}</h4>
+<br>
+<h2>Last Three Of This Operand:</h2>
+<mat-list role="list">
+  @for(op of Last3OfType(); track op){
+
+    <mat-list-item role="listitem">{{op.number1}} {{operandToSymbol(op.operationType)}} {{op.number2}} = {{op.result}}</mat-list-item>
+  }
+
+</mat-list>
+
+<h2>This Operand In The Last Month:</h2>
+<mat-list role="list">
+  @for(op of LastMonthOfType(); track op){
+
+    <mat-list-item role="listitem">{{op.number1}} {{operandToSymbol(op.operationType)}} {{op.number2}} = {{op.result}}</mat-list-item>
+  }
+
+</mat-list>

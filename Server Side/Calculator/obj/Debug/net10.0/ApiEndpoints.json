@@ -1,0 +1,54 @@
+[
+  {
+    "ContainingType": "Calculator.Controllers.CalculateController",
+    "Method": "Calculate",
+    "RelativePath": "Calculate/Calculate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "operation",
+        "Type": "Calculator.Models.Operation",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Double",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Calculator.Controllers.CalculateController",
+    "Method": "GetHistory",
+    "RelativePath": "Calculate/History/{operationType}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "operationType",
+        "Type": "Calculator.Models.OperationType",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Calculator.Models.OperationsHistory",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]
